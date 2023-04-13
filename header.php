@@ -36,8 +36,8 @@
                             <li class="nav-item <?php if(is_page('about-us')) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/about-us')?>">About Us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/blog.html">Blog</a>
+                            <li class="nav-item <?php if(is_page('blog')) echo 'active' ?>">
+                                <a class="nav-link" href="<?php echo site_url('/blog')?>">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/event.html">Event</a>

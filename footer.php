@@ -4,7 +4,7 @@
     ),
     url(<?php echo get_theme_file_uri("/images/bg-newsletter.jpg" )?>);">
     <div class="d-flex flex-column align-items-center justify-content-center">
-        <h2 class="mb-4">Don’t Miss Awesome updates From Our Alumni</h2>
+        <h2 class="mb-4">Don’t Miss Awesome Updates From Our Alumni</h2>
         <p class="mb-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
