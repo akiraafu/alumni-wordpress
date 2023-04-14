@@ -30,17 +30,17 @@
                     <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item <?php if(is_front_page()) echo 'active'?>">
-                                <a class="nav-link" aria-current="page" href="<?php echo site_url('/')?>">Home</a>
+                                <a class="nav-link" href="<?php echo site_url('/')?>">Home</a>
                             </li>
 
                             <li class="nav-item <?php if(is_page('about-us')) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/about-us')?>">About Us</a>
                             </li>
-                            <li class="nav-item <?php if(is_page('blog')) echo 'active' ?>">
+                            <li class="nav-item  <?php if(get_post_type() == 'post' ) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/blog')?>">Blog</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/event.html">Event</a>
+                            <li class="nav-item <?php if(is_page('event')) echo 'active'?>">
+                                <a class="nav-link" href="<?php echo site_url('/event')?>">Event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/jobs.html">Job Opportunity</a>
