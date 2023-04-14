@@ -64,7 +64,7 @@ get_header();
                 <a href="#">
                     <h2>annual meetup and scholarship presentation</h2>
 
-                    <i class="bx bx-location-plus"></i>
+                    <i class='bx bxs-map-pin'></i>
                     <span>North Metropolitan TAFE</span>
                 </a>
                 <p class="mt-3">
@@ -115,99 +115,51 @@ get_header();
                     <h3>Latest Blog</h3>
                 </div>
                 <div class="cards scrollbar" id="scrollbar">
+
+                    <?php
+                $homepagePosts = new WP_Query(array(
+                    'posts_per_page' => 5,
+
+                ));
+
+                while($homepagePosts -> have_posts( )){
+                    $homepagePosts -> the_post(); ?>
                     <div class="card mb-3" style="max-width: 540px">
                         <div class="row g-0">
                             <div class="col-4">
-                                <img src="<?php echo get_theme_file_uri( "/images/aboutus.jpg" )?>" class="img-fluid"
-                                    alt="..." />
+                                <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                if($feat_image) {?>
+                                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
+                                <?php } else {?>
+                                <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
+                                    class="img-fluid rounded-start" alt="..." />
+                                <?php } ?>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
+                                    <a href="<?php the_permalink(  ) ?>">
+                                        <h5 class="card-title"><?php the_title( )?></h5>
                                     </a>
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
+                                        <?php
+                    if(has_excerpt(  )){
+                       
+                        echo wp_trim_words(get_the_excerpt(  ),15);
+                    }else{
+                        echo wp_trim_words( get_the_content( ),15);
+                    }
+                     ?>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                } wp_reset_postdata(  );
+                ?>
+
                 </div>
-                <a href="" class="button">View All Blogs</a>
+                <a href="<?php echo site_url('/blog')?>" class="button">View All Blogs</a>
             </div>
             <div class="col-md d-flex flex-column align-items-center mx-3">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
