@@ -28,7 +28,7 @@ function custom_class( $classes ) {
 }
 add_filter( 'body_class', 'custom_class' );
 
-
+//add menu
 function alumni_features(){
     register_nav_menu( 'headerMenuLocation', 'header Menu Location' );
     add_theme_support( 'title-tag' );
@@ -37,9 +37,27 @@ function alumni_features(){
 add_action("after_setup_theme", 'alumni_features' );
 
 
-
+//add thumbnails
 function my_theme_setup(){
     add_theme_support('post-thumbnails');
 }
 
 add_action('after_setup_theme', 'my_theme_setup');
+
+
+//add new post type
+function alumni_post_types(){
+    register_post_type( 'event', array(
+        'public' => true,
+        'menu_icon' => 'dashicons-calendar',
+        'labels' => array(
+            'name' => 'Events',
+            'add_new_item' => 'Add New Event',
+            'edit_item' => 'Edit Event',
+            'all_items'=> 'Add Events',
+            'singular_name' => 'Event'
+        )
+    ));
+}
+
+add_action('init', 'alumni_post_types' );
