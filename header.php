@@ -39,8 +39,8 @@
                             <li class="nav-item  <?php if(get_post_type() == 'post' ) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/blog')?>">Blog</a>
                             </li>
-                            <li class="nav-item <?php if(is_page('event')) echo 'active'?>">
-                                <a class="nav-link" href="<?php echo site_url('/event')?>">Event</a>
+                            <li class="nav-item <?php if(get_post_type() == 'event' ) echo 'active'?>">
+                                <a class="nav-link" href="<?php echo site_url('/events')?>">Event</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/jobs.html">Job Opportunity</a>

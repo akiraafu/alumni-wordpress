@@ -48,6 +48,8 @@ add_action('after_setup_theme', 'my_theme_setup');
 //add new post type
 function alumni_post_types(){
     register_post_type( 'event', array(
+        'rewrite' => array('slug' => 'events'),
+        'has_archive'=> true,
         'public' => true,
         'menu_icon' => 'dashicons-calendar',
         'labels' => array(

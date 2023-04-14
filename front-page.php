@@ -118,7 +118,7 @@ get_header();
 
                     <?php
                 $homepagePosts = new WP_Query(array(
-                    'posts_per_page' => 5,
+                    'posts_per_page' => 6,
 
                 ));
 
@@ -247,6 +247,13 @@ get_header();
                     <h3>Event</h3>
                 </div>
                 <div class="cards scrollbar events" id="scrollbar">
+                    <?php
+                    $homepageEvents = new WP_Query(array(
+                        'posts_per_page' => 6,
+                        'post_type'=> 'event'
+                    ));
+                    while( $homepageEvents -> have_posts(  )){
+                        $homepageEvents-> the_post(  );?>
                     <div class="card" style="max-width: 540px">
                         <div class="row g-0">
                             <div class="col-4">
@@ -258,105 +265,26 @@ get_header();
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
+                                    <a href="<?php the_permalink( )?>">
+                                        <h5 class="card-title"><?php the_title( )?></h5>
                                     </a>
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
+                                        <?php
+                    if(has_excerpt(  )){
+                       
+                        echo wp_trim_words(get_the_excerpt(  ),10);
+                    }else{
+                        echo wp_trim_words( get_the_content( ),10);
+                    }
+                     ?>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <div class="event-date">
-                                    <span>APR</span>
-                                    <span class="date">23</span>
-                                    <span>2023</span>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <div class="event-date">
-                                    <span>APR</span>
-                                    <span class="date">23</span>
-                                    <span>2023</span>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <div class="event-date">
-                                    <span>APR</span>
-                                    <span class="date">23</span>
-                                    <span>2023</span>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <div class="event-date">
-                                    <span>APR</span>
-                                    <span class="date">23</span>
-                                    <span>2023</span>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php   }
+                    ?>
+
                 </div>
                 <a href="" class="button">View All Events</a>
             </div>
