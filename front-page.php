@@ -200,81 +200,44 @@ get_header();
                     <h3>Job Opportunity</h3>
                 </div>
                 <div class="cards jobs scrollbar" id="scrollbar">
+                    <?php
+                    $today = date('Ymd');
+                    $homepageJobs = new WP_Query(array(
+                        'posts_per_page' => 6,
+                        'post_type'=> 'job',
+                       
+                    ));
+                    while( $homepageJobs  -> have_posts(  )){
+                        $homepageJobs -> the_post(  );?>
                     <div class="card mb-3" style="max-width: 540px">
                         <div class="row g-0">
                             <div class="col-4">
-                                <img src="<?php echo get_theme_file_uri( "/images/aboutus.jpg" )?>" class="img-fluid"
-                                    alt="..." />
+                                <?php if( get_field('company_logo') ){ ?>
+                                <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
+
+                                <?php } else {?>
+                                <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
+                                    class="img-fluid" alt="..." />
+                                <?php } ?>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
+                                    <a href="<?php the_permalink( )?>">
+                                        <h5 class="card-title"><?php the_title(); ?></h5>
                                     </a>
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
+                                        <span><i class="bx bxs-map-pin"></i> <?php the_field('location');?></span>
+                                        <span><i class="bx bx-time"></i> <?php the_field('work_type');?></span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mb-3" style="max-width: 540px">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="/images/aboutus.jpg" class="img-fluid" alt="..." />
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <a href="#">
-                                        <h5 class="card-title">Card title</h5>
-                                    </a>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a
-                                        natural lead-in to additional content...
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php   }
+                    ?>
+
                 </div>
-                <a href="" class="button">View All Jobs</a>
+                <a href="<?php echo get_post_type_archive_link('job')?>" class="button">View All Jobs</a>
             </div>
             <div class="col-md d-flex flex-column align-items-center">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">

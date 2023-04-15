@@ -12184,6 +12184,7 @@ a:focus {
 .activities .row .jobs .card .row img {
   background-color: lightgray;
   padding: 5px;
+  object-fit: contain;
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
