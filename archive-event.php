@@ -30,8 +30,11 @@ get_header();
             </div>
             <div class="date-box">
                 <h3>
-                    <span> 15 </span>
-                    March
+                    <span> <?php $eventDate = new DateTime(get_field('event_date'));
+                    echo $eventDate -> format('d');
+                    ?> </span>
+                    <?php $eventDate = new DateTime(get_field('event_date'));
+                    echo $eventDate -> format('M');?>
                 </h3>
             </div>
         </div>

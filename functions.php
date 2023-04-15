@@ -48,6 +48,7 @@ add_action('after_setup_theme', 'my_theme_setup');
 //add new post type
 function alumni_post_types(){
     register_post_type( 'event', array(
+        'supports' => array('title', 'editor', 'excerpt'),
         'rewrite' => array('slug' => 'events'),
         'has_archive'=> true,
         'public' => true,
@@ -56,7 +57,7 @@ function alumni_post_types(){
             'name' => 'Events',
             'add_new_item' => 'Add New Event',
             'edit_item' => 'Edit Event',
-            'all_items'=> 'Add Events',
+            'all_items'=> 'All Events',
             'singular_name' => 'Event'
         )
     ));

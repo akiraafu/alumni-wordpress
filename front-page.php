@@ -244,13 +244,25 @@ get_header();
             </div>
             <div class="col-md d-flex flex-column align-items-center">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
-                    <h3>Event</h3>
+                    <h3>Upcoming Events</h3>
                 </div>
                 <div class="cards scrollbar events" id="scrollbar">
                     <?php
+                    $today = date('Ymd');
                     $homepageEvents = new WP_Query(array(
                         'posts_per_page' => 6,
-                        'post_type'=> 'event'
+                        'post_type'=> 'event',
+                        'meta_key' => 'event_date',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'event_date',
+                                'compare' => '>=',
+                                'value' => $today,
+                                'type' => 'numeric'
+                            )
+                        )
                     ));
                     while( $homepageEvents -> have_posts(  )){
                         $homepageEvents-> the_post(  );?>
@@ -258,9 +270,18 @@ get_header();
                         <div class="row g-0">
                             <div class="col-4">
                                 <div class="event-date">
-                                    <span>APR</span>
-                                    <span class="date">23</span>
-                                    <span>2023</span>
+                                    <span><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('M');
+                                    ?></span>
+                                    <span class="date"><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('d');
+                                    ?></span>
+                                    <span><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('Y');
+                                    ?></span>
                                 </div>
                             </div>
                             <div class="col-8">
@@ -286,7 +307,7 @@ get_header();
                     ?>
 
                 </div>
-                <a href="" class="button">View All Events</a>
+                <a href="<?php echo get_post_type_archive_link('event')?>" class="button">View All Events</a>
             </div>
         </div>
     </div>
