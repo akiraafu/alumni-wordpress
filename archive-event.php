@@ -17,10 +17,12 @@ get_header();
         ?>
         <div class="box">
             <div class="event-image">
-                <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
-                if($feat_image) {?>
-                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
-                <?php } else {?>
+                <?php 
+                $first_image = get_first_image_from_post_content(get_the_content());
+                if (!empty($first_image)) {
+                 ?>
+                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="..." />
+                <?php  }  else {?>
                 <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
                 <?php } ?>
             </div>

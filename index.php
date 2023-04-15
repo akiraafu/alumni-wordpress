@@ -19,11 +19,17 @@ get_header();
         <div class="blog-box">
             <div class="blog-image">
 
-                <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                <?php 
+                $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
                 if($feat_image) {?>
                 <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
+                <?php  }  else {
+                    $first_image = get_first_image_from_post_content(get_the_content());
+                    if (!empty($first_image)) {
+                 ?>
+                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="..." />
                 <?php } ?>
-
+                <?php } ?>
             </div>
             <div class="blog-details">
                 <div class="blog-info">

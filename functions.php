@@ -111,3 +111,12 @@ function time_ago( $type = 'post' ) {
     return human_time_diff($d('U'), current_time('timestamp')) . " " . __('ago');
 
 }
+
+
+function get_first_image_from_post_content($post_content) {
+    preg_match('/<img.+?src="(.+?)"/', $post_content, $matches);
+    if (isset($matches[1])) {
+        return $matches[1];
+    }
+    return '';
+}
