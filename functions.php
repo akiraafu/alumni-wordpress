@@ -61,6 +61,21 @@ function alumni_post_types(){
             'singular_name' => 'Event'
         )
     ));
+
+    register_post_type( 'job', array(
+        'supports' => array('title', 'editor', 'excerpt'),
+        'rewrite' => array('slug' => 'jobs'),
+        'has_archive'=> true,
+        'public' => true,
+        'menu_icon' => 'dashicons-portfolio',
+        'labels' => array(
+            'name' => 'Jobs',
+            'add_new_item' => 'Add New Job',
+            'edit_item' => 'Edit Job',
+            'all_items'=> 'All Jobs',
+            'singular_name' => 'Job'
+        )
+    ));
 }
 
 add_action('init', 'alumni_post_types' );
@@ -86,3 +101,13 @@ function alumni_adjust_queries($query){
 
 }
 add_action( 'pre_get_posts','alumni_adjust_queries' );
+
+
+//post time
+
+function time_ago( $type = 'post' ) {
+    $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
+
+    return human_time_diff($d('U'), current_time('timestamp')) . " " . __('ago');
+
+}

@@ -12,7 +12,7 @@ get_header();
     </div>
     <div class="events d-flex flex-column align-items-start justify-content-center">
         <?php 
-    while(have_posts()){ 
+         while(have_posts()){ 
         the_post(  );
         ?>
         <div class="box">
@@ -41,12 +41,12 @@ get_header();
             </div>
         </div>
         <?php
-    } ?>
+            } ?>
         <div class="paginate">
             <?php
 
-    echo paginate_links(  );
-    ?>
+            echo paginate_links(  );
+            ?>
 
             <p class="mt-5">Looking for a recap of past events? <a class="border-bottom" href="
                     <?php echo site_url('/past-events' ) ?>">Check
@@ -54,7 +54,7 @@ get_header();
                     events archive.</a></P>
         </div>
 
-
+    </div>
 
 </section>
 

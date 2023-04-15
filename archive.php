@@ -57,12 +57,12 @@ get_header();
         </div>
 
         <?php
-    } ?>
+         } ?>
         <div class="paginate">
             <?php
 
-    echo paginate_links(  );
-    ?>
+        echo paginate_links(  );
+        ?>
         </div>
     </div>
 </section>
