@@ -20,13 +20,6 @@ the_post(  );?>
 
     </div>
     <div class="content-area container p-5 blog-content">
-        <div class="content-info">
-            <p><i class="bx bxs-user"></i> author</p>
-            <p><i class="bx bxs-calendar"></i> 20 May 2023</p>
-            <p class="blog-tags">
-                <i class="bx bx-purchase-tag-alt"></i> News, Event
-            </p>
-        </div>
         <div class="content-text">
             <?php the_content( );?>
         </div>

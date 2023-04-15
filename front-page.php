@@ -20,7 +20,7 @@ get_header();
                         <div>
                             <h1>&lt;Reconnect/&gt;</h1>
                             <h2>Build Lifelong Connections with Graduates Worldwide</h2>
-                            <a href="" class="button"> Read More </a>
+                            <!-- <a href="" class="button"> Read More </a> -->
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ get_header();
                             <h2>
                                 Discover the Power of Our Alumni Network and Resources
                             </h2>
-                            <a href="" class="button"> Read More </a>
+                            <!-- <a href="" class="button"> Read More </a> -->
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ get_header();
                         <div>
                             <h1>&lt;Reunions/&gt;</h1>
                             <h2>Relive cherished memories and create new ones with old friends</h2>
-                            <a href="" class="button"> Read More </a>
+                            <!-- <a href="" class="button"> Read More </a> -->
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,14 @@ get_header();
                         $homepageEvents-> the_post(  );?>
         <div class="event-details row g-3 d-flex align-items-center justify-content-center">
             <div class="col-lg-3 event-image">
-                <img src="<?php echo get_theme_file_uri( "/images/aboutus.jpg" )?>" class="img-fluid" alt="..." />
+                <?php 
+                $first_image = get_first_image_from_post_content(get_the_content());
+                if (!empty($first_image)) {
+                 ?>
+                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="..." />
+                <?php  }  else {?>
+                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
+                <?php } ?>
             </div>
             <div class="event-content col-lg-5">
                 <a href="<?php the_permalink( )?>">
@@ -142,7 +149,7 @@ get_header();
 </section>
 <section class="activities">
     <div class="container py-5">
-        <p class="tag">Our Activities</p>
+        <!-- <p class="tag">Our Activities</p> -->
         <div class="row d-flex flex-wrap align-items-center justify-content-center">
             <div class="col-md d-flex flex-column align-items-center">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">

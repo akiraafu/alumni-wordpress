@@ -43,6 +43,8 @@ get_header();
                 <?php if( get_field('company_logo') ){ ?>
                 <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
 
+                <?php } elseif( get_field('company_name') ) {?>
+                <p><?php the_field('company_name'); ?></p>
                 <?php } else {?>
                 <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>" class="img-fluid"
                     alt="..." />
