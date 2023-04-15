@@ -12633,6 +12633,9 @@ footer .copyright {
   .sub-page .aboutus .row .about-img {
     width: 70%;
   }
+  .sub-page .event-page .box .event-image img {
+    aspect-ratio: 3/2;
+  }
   .newsletter {
     padding: 30px;
   }

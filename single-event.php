@@ -19,7 +19,10 @@ the_post(  );?>
     <div class="content-area container p-5 blog-content">
         <div class="content-info">
 
-            <p><i class="bx bxs-calendar"></i> <?php the_time('d M Y')?></p>
+            <p><i class="bx bxs-calendar"></i> <?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('d M Y');
+                                    ?></p>
 
         </div>
         <div class="content-text">

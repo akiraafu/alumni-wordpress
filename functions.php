@@ -64,3 +64,25 @@ function alumni_post_types(){
 }
 
 add_action('init', 'alumni_post_types' );
+
+
+// Manipulate Default URL Based Queries
+function alumni_adjust_queries($query){
+   
+    if(!is_admin(  ) AND is_post_type_archive( 'event' ) AND $query -> is_main_query( )){
+        $today = date('Ymd');
+        $query -> set('meta_key', "event_date");
+        $query -> set('orderby', "meta_value_num");
+        $query -> set('order', "DESC");
+        $query -> set('meta_query', array(
+            array(
+                'key' => 'event_date',
+                'compare' => '>=',
+                'value' => $today,
+                'type' => 'numeric'
+            )
+        ));
+    }
+
+}
+add_action( 'pre_get_posts','alumni_adjust_queries' );

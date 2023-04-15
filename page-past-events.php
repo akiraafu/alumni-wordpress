@@ -6,14 +6,30 @@ get_header();
 
 <section class="event-page container py-5">
     <div class="heading-area mt-5">
-        <p class="tag">Our Events</p>
-        <p class="heading">Join us for a great time at our upcoming events.</p>
+        <p class="tag">Past Events</p>
+        <p class="heading">A recap of our past events.</p>
 
     </div>
     <div class="events d-flex flex-column align-items-start justify-content-center">
         <?php 
-    while(have_posts()){ 
-        the_post(  );
+       $today = date('Ymd');
+       $pastEvents = new WP_Query(array(
+            'paged'=> get_query_var( 'paged',1),
+           'post_type'=> 'event',
+           'meta_key' => 'event_date',
+           'orderby' => 'meta_value_num',
+           'order' => 'ASC',
+           'meta_query' => array(
+               array(
+                   'key' => 'event_date',
+                   'compare' => '<',
+                   'value' => $today,
+                   'type' => 'numeric'
+               )
+           )
+       ));
+    while( $pastEvents->have_posts()){ 
+        $pastEvents -> the_post(  );
         ?>
         <div class="box">
             <div class="event-image">
@@ -45,12 +61,15 @@ get_header();
         <div class="paginate">
             <?php
 
-    echo paginate_links(  );
+    echo paginate_links( array(
+        'total' => $pastEvents -> max_num_pages,
+    ) );
     ?>
 
-            <p class="mt-5">Looking for a recap of past events? <a class="border-bottom" href="
-                    <?php echo site_url('/past-events' ) ?>">Check
-                    out our past
+
+            <p class="mt-5">Don't wanna miss out? <a class="border-bottom" href="
+                    <?php echo site_url('/events' ) ?>">Check
+                    out our upcoming
                     events archive.</a></P>
         </div>
 

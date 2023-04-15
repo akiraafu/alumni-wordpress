@@ -56,33 +56,67 @@ get_header();
 <section class="upcoming-event py-5">
     <div class="container px-5">
         <p class="tag">Upcoming Event</p>
+        <?php
+                    $today = date('Ymd');
+                    $homepageEvents = new WP_Query(array(
+                        'posts_per_page' => 1,
+                        'post_type'=> 'event',
+                        'meta_key' => 'event_date',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'event_date',
+                                'compare' => '>=',
+                                'value' => $today,
+                                'type' => 'numeric'
+                            )
+                        )
+                    ));
+                    while( $homepageEvents -> have_posts(  )){
+                        $homepageEvents-> the_post(  );?>
         <div class="event-details row g-3 d-flex align-items-center justify-content-center">
             <div class="col-lg-3 event-image">
                 <img src="<?php echo get_theme_file_uri( "/images/aboutus.jpg" )?>" class="img-fluid" alt="..." />
             </div>
             <div class="event-content col-lg-5">
-                <a href="#">
-                    <h2>annual meetup and scholarship presentation</h2>
+                <a href="<?php the_permalink( )?>">
+                    <h2><?php the_title( )?></h2>
 
                     <i class='bx bxs-map-pin'></i>
-                    <span>North Metropolitan TAFE</span>
+                    <span><?php the_field('location');?></span>
                 </a>
                 <p class="mt-3">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt
-                    fuga veniam totam fugit. Veritatis soluta placeat repellendus,
-                    consequuntur minima, iusto ut dolore eveniet fuga cumque,
-                    perspiciatis quis fugiat sit cupiditate!
+                    <?php
+                    if(has_excerpt(  )){
+                       
+                        echo wp_trim_words(get_the_excerpt(  ),25);
+                    }else{
+                        echo wp_trim_words( get_the_content( ),25);
+                    }
+                     ?>
                 </p>
             </div>
             <div class="event-utils col-lg-3">
                 <div class="event-date">
-                    <span>23</span>
-                    <span>APR</span>
-                    <span>2023</span>
+                    <span><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('d');
+                                    ?></span>
+                    <span><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('M');
+                                    ?></span>
+                    <span><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate -> format('Y');
+                                    ?></span>
                 </div>
-                <a class="button" href="#">Join now</a>
+                <a class="button" href="<?php the_permalink( )?>">Join now</a>
             </div>
         </div>
+        <?php   }
+                    ?>
     </div>
 </section>
 <section class="aboutus container py-5">
@@ -132,7 +166,7 @@ get_header();
                                 <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
                                 <?php } else {?>
                                 <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                                    class="img-fluid rounded-start" alt="..." />
+                                    class="img-fluid" alt="..." />
                                 <?php } ?>
                             </div>
                             <div class="col-8">
