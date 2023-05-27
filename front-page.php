@@ -77,15 +77,17 @@ get_header();
                         $homepageEvents-> the_post(  );?>
         <div class="event-details row g-3 d-flex align-items-center justify-content-center">
             <div class="col-lg-3 event-image">
-                <?php 
+                <a href="<?php the_permalink( )?>">
+                    <?php 
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
                  ?>
-                <img src="<?php echo $first_image ;?>" class="img-fluid event-image-one" alt="..." />
-                <?php  }  else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid event-image-one"
-                    alt="..." />
-                <?php } ?>
+                    <img src="<?php echo $first_image ;?>" class="img-fluid event-image-one" alt="..." />
+                    <?php  }  else {?>
+                    <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid event-image-one"
+                        alt="..." />
+                    <?php } ?>
+                </a>
             </div>
             <div class="event-content col-lg-5">
                 <a href="<?php the_permalink( )?>">

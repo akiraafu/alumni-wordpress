@@ -12566,8 +12566,7 @@ footer .copyright {
 }
 
 .post-tagbox {
-  position: absolute;
-  bottom: 3%;
+  bottom: 2px;
   font-size: 14px;
 }
 .post-tagbox .post-tag,
@@ -12583,6 +12582,7 @@ footer .copyright {
   cursor: default;
   user-select: none;
   transition: color 0.2s;
+  margin-bottom: 5px;
 }
 .post-tagbox .post-tag::before,
 .post-tagbox a::before {
@@ -12605,6 +12605,26 @@ footer .copyright {
   border-top: 13px solid transparent;
   right: -9.5px;
   top: 0;
+}
+
+.paginate {
+  display: inline-block;
+  margin: 20px auto;
+}
+.paginate .page-numbers {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.paginate .page-numbers:hover:not(.current) {
+  background-color: #ddd;
+}
+.paginate .page-numbers.current {
+  background-color: #e45f2b;
+  color: white;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 993px) {

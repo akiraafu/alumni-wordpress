@@ -11,32 +11,7 @@ get_header();
     </div>
 
     <div class="jobs d-flex flex-column align-items-start justify-content-center">
-        <?php dynamic_sidebar('my_new_widget_area'); ?>
-        <!-- 
-        <form class="filter">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Keywords(e.g. job, city, role...)" />
-                <input type="text" class="form-control" placeholder="Location" />
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Not Specified</option>
-                    <option value="1">
-                        < $45,000</option>
-                    <option value="2">$45,000 - $75,000</option>
-                    <option value="3">$75,000 - $95,000</option>
-                    <option value="4">> $95,000</option>
-                </select>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Not Specified</option>
-                    <option value="1">Full-Time</option>
-                    <option value="2">Part-Time</option>
-                    <option value="3">Contract</option>
-                    <option value="4">Intern</option>
-                </select>
-                <a href="" type="button" class="button">Search</a>
-            </div>
-        </form> -->
-
-        <?php 
+        <?php dynamic_sidebar('my_new_widget_area'); 
 
          while( have_posts()){ 
        the_post(  );

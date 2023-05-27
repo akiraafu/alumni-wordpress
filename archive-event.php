@@ -65,16 +65,17 @@ get_header();
 
         <?php
             } ?>
+        <p class="mt-5">Looking for a recap of past events? <a class="border-bottom" href="
+                    <?php echo site_url('/past-events' ) ?>">Check
+                out our past
+                events archive.</a></P>
+
         <div class="paginate">
             <?php
-
             echo paginate_links(  );
             ?>
 
-            <p class="mt-5">Looking for a recap of past events? <a class="border-bottom" href="
-                    <?php echo site_url('/past-events' ) ?>">Check
-                    out our past
-                    events archive.</a></P>
+
         </div>
 
     </div>

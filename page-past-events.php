@@ -58,6 +58,10 @@ get_header();
         </div>
         <?php
     } ?>
+        <p class="mt-5">Don't wanna miss out? <a class="border-bottom" href="
+                    <?php echo site_url('/events' ) ?>">Check
+                out our upcoming
+                events archive.</a></P>
         <div class="paginate">
             <?php
 
@@ -67,10 +71,7 @@ get_header();
     ?>
 
 
-            <p class="mt-5">Don't wanna miss out? <a class="border-bottom" href="
-                    <?php echo site_url('/events' ) ?>">Check
-                    out our upcoming
-                    events archive.</a></P>
+
         </div>
 
 

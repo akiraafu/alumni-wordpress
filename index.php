@@ -76,7 +76,7 @@ get_header();
                             </a>
 
                         </p>
-                        <p class="card-text mb-4">
+                        <p class="card-text mb-2">
 
                             <small class="text-body-secondary">Last updated <?php echo time_ago(); ?> ago</small>
                         </p>
