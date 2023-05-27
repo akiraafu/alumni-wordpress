@@ -5,7 +5,7 @@ the_post(  );?>
 
 
 </div>
-<section class="detail-page" style="margin:0 150px;">
+<section class="detail-page" style="margin:0 20px;">
     <?php the_content( );?>
 </section>
 

@@ -6,7 +6,7 @@ the_post(  );?>
 
 </div>
 <section class="detail-page">
-    <div class="title-area d-flex flex-column">
+    <div class="title-area d-flex justify-content-center flex-column">
 
         <a href="<?php echo get_post_type_archive_link('event');?>" class="button"> <i class="bx bx-arrow-back"></i>
             Event Home
@@ -19,7 +19,7 @@ the_post(  );?>
     <div class="content-area container p-5 blog-content">
         <div class="content-info">
 
-            <p><i class="bx bxs-calendar"></i> <?php 
+            <p class="text-body-secondary">Event Date: <i class="bx bxs-calendar"></i> <?php 
                                     $eventDate = new DateTime(get_field('event_date'));
                                     echo $eventDate -> format('d M Y');
                                     ?></p>

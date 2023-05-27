@@ -13,14 +13,15 @@ get_header();
     <div class="blogs d-flex flex-column align-items-start justify-content-center">
 
         <?php 
-    while(have_posts()){ 
-        the_post(  );
-        ?>
+        while(have_posts()){ 
+            the_post(  );
+            ?>
 
         <article class="blog-box card shadow-sm bg-body-tertiary mb-4 p-3">
             <div class="row g-0">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="col-md-4">
+
+                <div class="col-md-4">
+                    <a href="<?php the_permalink(); ?>">
                         <?php 
                 $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
                 if($feat_image) {?>
@@ -38,25 +39,25 @@ get_header();
                         <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
                             class="img-fluid rounded-start object-fit-cover" alt="..." />
                         <?php } ?>
-                </a>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body position-relative">
-                    <a href="<?php the_permalink(); ?>">
-                        <h5 class="card-title fs-3 fw-bold">
-                            <?php the_title( )?>
-                        </h5>
                     </a>
-                    <p class="card-text text-body-secondary">
-                        <small class=""><?php the_time('d M Y')?></small>
-                        &#x2022;
-                        <small class="text-body-secondary"><?php the_author_posts_link(  );?></small>
-                        &#x2022;
-                        <small> <?php echo get_the_category_list(' , ')?></small>
-                    </p>
-                    <a href="<?php the_permalink(); ?>">
-                        <p class="card-text" style="text-align: justify">
-                            <?php
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body position-relative">
+                        <a href="<?php the_permalink(); ?>">
+                            <h5 class="card-title fs-3 fw-bold">
+                                <?php the_title( )?>
+                            </h5>
+                        </a>
+                        <p class="card-text text-body-secondary">
+                            <small class=""><?php the_time('d M Y')?></small>
+                            &#x2022;
+                            <small class="text-body-secondary"><?php the_author_posts_link(  );?></small>
+                            &#x2022;
+                            <small> <?php echo get_the_category_list(' , ')?></small>
+                        </p>
+                        <a href="<?php the_permalink(); ?>">
+                            <p class="card-text" style="text-align: justify">
+                                <?php
                                 if(has_excerpt(  )){
                                 
                                     echo wp_trim_words(get_the_excerpt(  ),35);
@@ -64,36 +65,36 @@ get_header();
                                     echo wp_trim_words( get_the_content( ),35);
                                 }
                                 ?>
-                        </p>
-                    </a>
-                    <p class="read-more text-end">
-
-                        <a href="<?php the_permalink(); ?>" class="text-decoration-underline">
-                            Read More
+                            </p>
                         </a>
+                        <p class="read-more text-end">
 
-                    </p>
-                    <p class="card-text mb-4">
+                            <a href="<?php the_permalink(); ?>" class="text-decoration-underline">
+                                Read More
+                            </a>
 
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </p>
-                    <div class="post-tagbox">
-                        <?php echo get_the_tag_list(' ')?>
+                        </p>
+                        <p class="card-text mb-4">
+
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </p>
+                        <div class="post-tagbox">
+                            <?php echo get_the_tag_list(' ')?>
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </article>
+        </article>
 
 
-    <?php
-    } ?>
-    <div class="paginate">
         <?php
+            } ?>
+        <div class="paginate">
+            <?php
 
-    echo paginate_links(  );
-    ?>
-    </div>
+            echo paginate_links(  );
+            ?>
+        </div>
     </div>
 </section>
 

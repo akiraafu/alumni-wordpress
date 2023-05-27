@@ -34,9 +34,9 @@ get_header();
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
                  ?>
-                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="..." />
+                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="...">
                 <?php  }  else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
+                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
                 <?php } ?>
             </div>
             <div class="detail-box p-3">

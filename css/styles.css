@@ -12410,14 +12410,12 @@ footer .copyright {
   justify-content: center;
   align-items: start;
 }
-
 .jobs-page .jobs .widget-area {
   width: 100%;
   background-color: #f0f0f0;
   padding: 10px 20px;
   border-radius: 10px;
 }
-
 .jobs-page .jobs .box {
   width: 100%;
   height: auto;
@@ -12544,8 +12542,12 @@ footer .copyright {
   max-width: 250px;
 }
 .detail-page .job-content .content-info .box .detail-box {
-  width: 80%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   border: none;
+  gap: 1.5rem;
 }
 .detail-page .job-content .content-info .box .detail-box h4, .detail-page .job-content .content-info .box .detail-box .h4 {
   margin: 0;
@@ -12816,6 +12818,7 @@ footer .copyright {
     margin: 0;
   }
   .detail-page .job-content .content-info .box .detail-box {
+    flex-direction: column;
     border: none;
   }
   .detail-page .job-content .content-info .box .detail-box h4, .detail-page .job-content .content-info .box .detail-box .h4 {
