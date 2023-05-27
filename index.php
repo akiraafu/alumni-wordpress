@@ -76,7 +76,7 @@ get_header();
                         </p>
                         <p class="card-text mb-4">
 
-                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                            <small class="text-body-secondary">Last updated <?php echo time_ago(); ?> ago</small>
                         </p>
                         <div class="post-tagbox">
                             <?php echo get_the_tag_list(' ')?>
