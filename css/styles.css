@@ -11930,6 +11930,7 @@ a:focus {
   padding: 15px 55px;
   background-color: #e45f2b;
   border: 1px solid #e45f2b;
+  border-radius: 0.375rem;
   color: #f3f3f3 !important;
   transition: all ease-in-out 300ms;
 }

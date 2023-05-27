@@ -27,6 +27,7 @@ the_post(  );?>
         </div>
         <div class="content-text">
             <?php the_content( );?>
+
         </div>
     </div>
 </section>

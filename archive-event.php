@@ -30,14 +30,16 @@ get_header();
                         $homepageEvents-> the_post(  );?>
         <article class="box shadow-sm bg-body-tertiary">
             <div class=" event-image p-2">
-                <?php 
+                <a href="<?php the_permalink( )?>">
+                    <?php 
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
                  ?>
-                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="...">
-                <?php  }  else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
-                <?php } ?>
+                    <img src="<?php echo $first_image ;?>" class="img-fluid" alt="...">
+                    <?php  }  else {?>
+                    <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
+                    <?php } ?>
+                </a>
             </div>
             <div class="detail-box p-3">
                 <a href="<?php the_permalink( )?>">
@@ -46,13 +48,16 @@ get_header();
                 <h6><?php the_field('location');?></h6>
             </div>
             <div class="date-box p-2">
-                <h3>
-                    <span> <?php $eventDate = new DateTime(get_field('event_date'));
+                <a href="<?php the_permalink( )?>">
+                    <h3>
+                        <span> <?php $eventDate = new DateTime(get_field('event_date'));
                     echo $eventDate -> format('d');
                     ?> </span>
-                    <?php $eventDate = new DateTime(get_field('event_date'));
+                        <?php $eventDate = new DateTime(get_field('event_date'));
                     echo $eventDate -> format('M');?>
-                </h3>
+                    </h3>
+                </a>
+
             </div>
         </article>
 
