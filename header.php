@@ -33,9 +33,6 @@
                                 <a class="nav-link" href="<?php echo site_url('/')?>">Home</a>
                             </li>
 
-                            <li class="nav-item <?php if(is_page('about-us')) echo 'active'?>">
-                                <a class="nav-link" href="<?php echo site_url('/about-us')?>">About Us</a>
-                            </li>
                             <li class="nav-item  <?php if(get_post_type() == 'post' ) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/blog')?>">Blog</a>
                             </li>
@@ -50,10 +47,10 @@
                                 class="nav-item  <?php if(is_page('community') OR is_page( 'register')) echo 'active'?>">
                                 <a class="nav-link" href="<?php echo site_url('/community')?>">Community</a>
                             </li>
-                            <!-- <li class="nav-item ">
-                                <a class="nav-link" href="https://2022.gradshow.screencraft.net.au/"
-                                    target="_blank">2023 Gradshow</a>
-                            </li> -->
+                            <li class="nav-item <?php if(is_page('about-us')) echo 'active'?>">
+                                <a class="nav-link" href="<?php echo site_url('/about-us')?>">About Us</a>
+                            </li>
+
                         </ul>
 
                     </div>
