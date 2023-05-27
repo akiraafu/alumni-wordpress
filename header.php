@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="<?php bloginfo("charset");?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(  );?>
 </head>
 
@@ -18,7 +18,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary custom-nav-container">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="<?php echo site_url('/')?>">
-                        <h3>North Metropolitan</h3>
+                        <p class="logo fs-3">North Metropolitan</p>
                         <span>TAFE Alumni</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

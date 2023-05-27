@@ -35,9 +35,9 @@ get_header();
             <div class="event-image">
                 <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
                 if($feat_image) {?>
-                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
+                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="...">
                 <?php } else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
+                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
                 <?php } ?>
             </div>
             <div class="detail-box">

@@ -28,18 +28,18 @@ get_header();
                 
                 if($feat_image) {?>
                         <img src="<?php echo $feat_image; ?>" class="img-fluid rounded-start h-100 object-fit-cover"
-                            alt="..." />
+                            alt="...">
                         <?php  }  else {
                     $first_image = get_first_image_from_post_content(get_the_content());
                     if (!empty($first_image)) {
                  ?>
                         <img src="<?php echo $first_image ;?>" class="img-fluid rounded-start h-100 object-fit-cover"
-                            alt="..." />
+                            alt="...">
 
                         <?php } 
                     if (!$first_image){?>
                         <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                            class="img-fluid rounded-start object-fit-cover" alt="..." />
+                            class="img-fluid rounded-start object-fit-cover" alt="...">
                         <?php }} ?>
                     </a>
                 </div>

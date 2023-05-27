@@ -14,9 +14,9 @@ the_post(  );?>
                 <p class="heading mb-3">About Us</p>
             </div>
 
-            <h2 class="mb-4">
+            <h1 class="mb-4 fs-2">
                 Stay Connected to Your School and Your Fellow Alumni!
-            </h2>
+            </h1>
             <p class="about-us-detail">
                 The Alunmi website is for current and former students of Central and
                 North Metropolitan TAFE, to enable them to connect and remain in
@@ -27,7 +27,7 @@ the_post(  );?>
         </div>
         <div class="col about-img">
             <img src="<?php echo get_theme_file_uri( "/images/hero-bg3.jpg" )?>" alt=""
-                class="img-fluid aboutus-img-one" />
+                class="img-fluid aboutus-img-one">
         </div>
     </div>
 </section>

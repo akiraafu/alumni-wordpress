@@ -11980,7 +11980,8 @@ a:focus {
   align-items: flex-end;
   color: #fff;
 }
-.navbar-brand h3, .navbar-brand .h3 {
+.navbar-brand h3, .navbar-brand .h3,
+.navbar-brand .logo {
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
@@ -12160,15 +12161,15 @@ a:focus {
   height: 300px;
   padding: 0 10px;
 }
-.activities .row #scrollbar::-webkit-scrollbar {
+.activities .row .scrollbar::-webkit-scrollbar {
   width: 10px;
 }
-.activities .row #scrollbar::-webkit-scrollbar-track {
+.activities .row .scrollbar::-webkit-scrollbar-track {
   border-radius: 8px;
   background-color: #e7e7e7;
   border: 1px solid #cacaca;
 }
-.activities .row #scrollbar::-webkit-scrollbar-thumb {
+.activities .row .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: rgba(22, 22, 22, 0.15);
 }
@@ -12386,7 +12387,7 @@ footer .copyright {
   flex: 1.4;
   padding: 10px 0;
 }
-.box .detail-box h4, .box .detail-box .h4 {
+.box .detail-box .event-title {
   width: 100%;
   font-weight: bold;
   text-transform: capitalize;

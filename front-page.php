@@ -20,7 +20,7 @@ get_header();
                         <div>
                             <h1>&lt;Reconnect/&gt;</h1>
                             <h2>Build Lifelong Connections with Graduates</h2>
-                            <!-- <a href="" class="button"> Read More </a> -->
+
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ get_header();
                             <h2>
                                 Discover the Power of Our Alumni Network
                             </h2>
-                            <!-- <a href="" class="button"> Read More </a> -->
+
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ get_header();
                         <div>
                             <h1>&lt;Reunions/&gt;</h1>
                             <h2>Relive Memories and Make New Ones</h2>
-                            <!-- <a href="" class="button"> Read More </a> -->
+
                         </div>
                     </div>
                 </div>
@@ -82,10 +82,10 @@ get_header();
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
                  ?>
-                    <img src="<?php echo $first_image ;?>" class="img-fluid event-image-one" alt="..." />
+                    <img src="<?php echo $first_image ;?>" class="img-fluid event-image-one" alt="...">
                     <?php  }  else {?>
                     <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid event-image-one"
-                        alt="..." />
+                        alt="...">
                     <?php } ?>
                 </a>
             </div>
@@ -147,7 +147,7 @@ get_header();
         </div>
         <div class="col-md-5 about-img">
             <img src="<?php echo get_theme_file_uri( "/images/hero-bg3.jpg" )?>" alt=""
-                class="img-fluid aboutus-img-one" />
+                class="img-fluid aboutus-img-one">
         </div>
     </div>
 </section>
@@ -178,25 +178,25 @@ get_header();
                 
                 if($feat_image) {?>
                                     <img src="<?php echo $feat_image; ?>"
-                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="..." />
+                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
                                     <?php  }  else {
                     $first_image = get_first_image_from_post_content(get_the_content());
                     if (!empty($first_image)) {
                  ?>
                                     <img src="<?php echo $first_image ;?>"
-                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="..." />
+                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="...">
 
                                     <?php } 
                     if (!$first_image){?>
                                     <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                                        class="img-fluid rounded-start object-fit-cover" alt="..." />
+                                        class="img-fluid rounded-start object-fit-cover" alt="...">
                                     <?php }} ?>
                                 </a>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
                                     <a href="<?php the_permalink(  ) ?>">
-                                        <h5 class="card-title"><?php the_title( )?></h5>
+                                        <h4 class="card-title"><?php the_title( )?></h4>
                                     </a>
                                     <p class="card-text">
                                         <?php
@@ -249,18 +249,18 @@ get_header();
                             <div class="col-4">
                                 <a href="<?php the_permalink( )?>">
                                     <?php if( get_field('company_logo') ){ ?>
-                                    <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
+                                    <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="">
 
                                     <?php } else {?>
                                     <img src="<?php echo get_theme_file_uri('/images/default_company.jpg')?>"
-                                        class="img-fluid" alt="..." />
+                                        class="img-fluid" alt="...">
                                     <?php } ?>
                                 </a>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
                                     <a href="<?php the_permalink( )?>">
-                                        <h5 class="card-title"><?php the_title(); ?></h5>
+                                        <h4 class="card-title"><?php the_title(); ?></h4>
                                     </a>
                                     <p class="card-text">
                                         <span><i class="bx bxs-map-pin"></i> <?php the_field('location');?></span>
@@ -321,7 +321,7 @@ get_header();
                             <div class="col-8">
                                 <div class="card-body">
                                     <a href="<?php the_permalink( )?>">
-                                        <h5 class="card-title"><?php the_title( )?></h5>
+                                        <h4 class="card-title"><?php the_title( )?></h4>
 
                                         <p class="card-text">
                                             <?php

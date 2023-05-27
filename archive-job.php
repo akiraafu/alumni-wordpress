@@ -6,7 +6,7 @@ get_header();
 
 <section class="jobs-page container py-5">
     <div class="heading-area">
-        <p class="heading">Career Opportunities</p>
+        <h1 class="heading">Career Opportunities</h1>
         <p class="tag">Open the door to your dream career path today.</p>
     </div>
 
@@ -31,7 +31,7 @@ get_header();
             <div class="detail-box p-3">
                 <div class="job-desc">
                     <a href="<?php the_permalink( )?>">
-                        <h4><?php the_title();?></h4>
+                        <h2 class="fs-4 fw-bold text-center"><?php the_title();?></h2>
                     </a>
                     <div class="location d-flex align-items-center justify-content-center">
                         <p><i class="bx bxs-map-pin"></i> <?php the_field('job_location');?></p>

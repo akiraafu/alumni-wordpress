@@ -6,7 +6,7 @@ get_header();
 
 <section class="event-page container py-5">
     <div class="heading-area">
-        <p class="heading">Our Events</p>
+        <h1 class="heading">Our Events</h1>
         <p class="tag">Join us for a great time at our upcoming event.</p>
     </div>
     <div class="events d-flex flex-column align-items-start justify-content-center">
@@ -43,7 +43,7 @@ get_header();
             </div>
             <div class="detail-box p-3">
                 <a href="<?php the_permalink( )?>">
-                    <h4><?php the_title( ) ?></h4>
+                    <h2 class="fs-4 event-title"><?php the_title( ) ?></h2>
                 </a>
                 <h6><?php the_field('location');?></h6>
             </div>
