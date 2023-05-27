@@ -171,13 +171,24 @@ get_header();
                         <div class="row g-0">
                             <div class="col-4">
                                 <a href="<?php the_permalink(  ) ?>">
-                                    <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                                    <?php 
+                $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                
                 if($feat_image) {?>
-                                    <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
-                                    <?php } else {?>
+                                    <img src="<?php echo $feat_image; ?>"
+                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="..." />
+                                    <?php  }  else {
+                    $first_image = get_first_image_from_post_content(get_the_content());
+                    if (!empty($first_image)) {
+                 ?>
+                                    <img src="<?php echo $first_image ;?>"
+                                        class="img-fluid rounded-start h-100 object-fit-cover" alt="..." />
+
+                                    <?php } 
+                    if (!$first_image){?>
                                     <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                                        class="img-fluid" alt="..." />
-                                    <?php } ?>
+                                        class="img-fluid rounded-start object-fit-cover" alt="..." />
+                                    <?php }} ?>
                                 </a>
                             </div>
                             <div class="col-8">
@@ -189,9 +200,9 @@ get_header();
                                         <?php
                     if(has_excerpt(  )){
                        
-                        echo wp_trim_words(get_the_excerpt(  ),15);
+                        echo wp_trim_words(get_the_excerpt(  ),12);
                     }else{
-                        echo wp_trim_words( get_the_content( ),15);
+                        echo wp_trim_words( get_the_content( ),12);
                     }
                      ?>
                                     </p>
@@ -216,6 +227,17 @@ get_header();
                     $homepageJobs = new WP_Query(array(
                         'posts_per_page' => 6,
                         'post_type'=> 'job',
+                        'meta_key' => 'closing_date',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'closing_date',
+                                'compare' => '>=',
+                                'value' => $today,
+                                'type' => 'numeric'
+                            )
+                        )
                        
                     ));
                     while( $homepageJobs  -> have_posts(  )){
@@ -228,7 +250,7 @@ get_header();
                                     <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
 
                                     <?php } else {?>
-                                    <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
+                                    <img src="<?php echo get_theme_file_uri('/images/default_company.jpg')?>"
                                         class="img-fluid" alt="..." />
                                     <?php } ?>
                                 </a>

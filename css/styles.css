@@ -12413,9 +12413,11 @@ footer .copyright {
 }
 .jobs-page .jobs .widget-area {
   width: 100%;
-  background-color: #f0f0f0;
+  margin-bottom: 1.2rem;
+  background-color: #f8f9fa;
   padding: 10px 20px;
   border-radius: 10px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 .jobs-page .jobs .box {
   width: 100%;

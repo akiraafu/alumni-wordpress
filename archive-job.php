@@ -37,8 +37,25 @@ get_header();
         </form> -->
 
         <?php 
-         while(have_posts()){ 
-        the_post(  );
+         $today = date('Ymd');
+         $homepageJobs = new WP_Query(array(
+             'posts_per_page' => 6,
+             'post_type'=> 'job',
+             'meta_key' => 'closing_date',
+             'orderby' => 'meta_value_num',
+             'order' => 'ASC',
+             'meta_query' => array(
+                 array(
+                     'key' => 'closing_date',
+                     'compare' => '>=',
+                     'value' => $today,
+                     'type' => 'numeric'
+                 )
+             )
+            
+         ));
+         while( $homepageJobs -> have_posts()){ 
+        $homepageJobs  -> the_post(  );
         ?>
         <article class="box shadow-sm bg-body-tertiary">
             <div class="job-image">
