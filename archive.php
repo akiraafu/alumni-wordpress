@@ -25,6 +25,7 @@ get_header();
                     <a href="<?php the_permalink(); ?>">
                         <?php 
                 $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                
                 if($feat_image) {?>
                         <img src="<?php echo $feat_image; ?>" class="img-fluid rounded-start h-100 object-fit-cover"
                             alt="..." />
@@ -34,12 +35,12 @@ get_header();
                  ?>
                         <img src="<?php echo $first_image ;?>" class="img-fluid rounded-start h-100 object-fit-cover"
                             alt="..." />
+
                         <?php } 
-                        
-                    if (!$first_image)?>
+                    if (!$first_image){?>
                         <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
                             class="img-fluid rounded-start object-fit-cover" alt="..." />
-                        <?php } ?>
+                        <?php }} ?>
                     </a>
                 </div>
                 <div class="col-md-8">

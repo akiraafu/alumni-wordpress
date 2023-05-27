@@ -23,13 +23,13 @@
                     <li><a href="https://www.northmetrotafe.wa.edu.au/courses/information-technology-library-and-digital"
                             target="_blank">Programs</a></li>
                     <li><a href="https://www.northmetrotafe.wa.edu.au/campuses/perth" target="_blank">Campuses</a></li>
-                    <li><a href="https://www.northmetrotafe.wa.edu.au/apply-and-enrol" target="_blank">Apply</a></li>
+                    <li><a href="https://2022.gradshow.screencraft.net.au/" target="_blank">2023 Gradshow</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-md-3 item">
                 <h3>About</h3>
                 <ul>
-                    <li><a href="https://2022.gradshow.screencraft.net.au/" target="_blank">Sitemap</a></li>
+                    <li><a href="https://www.northmetrotafe.wa.edu.au/apply-and-enrol" target="_blank">Apply</a></li>
                     <li><a href="<?php echo site_url('/privacy-policy')?>">Privacy</a></li>
                     <li><a href="https://www.northmetrotafe.wa.edu.au/community/jobs-and-skills-centres-north-metropolitan-tafe"
                             target="_blank">Jobs and Skills Centres </a>
