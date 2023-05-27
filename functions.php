@@ -120,3 +120,22 @@ function get_first_image_from_post_content($post_content) {
     }
     return '';
 }
+
+
+
+ //*********Building a widget**********
+
+ function alumni_widget_init() {
+	
+	register_sidebar( array(
+		'name'=> 'Akira Widget',
+		'id' => 'my_new_widget_area',
+		'before_widget' => '<div class="widget-area" >',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	
+	));
+}
+
+add_action( 'widgets_init','alumni_widget_init');

@@ -5,12 +5,14 @@ get_header();
 </div>
 
 <section class="jobs-page container py-5">
-    <div class="heading-area mt-5">
-        <p class="tag">Career Opportunity</p>
-        <p class="heading">Open the door to your dream career path today.</p>
-
+    <div class="heading-area">
+        <p class="heading">Career Opportunities</p>
+        <p class="tag">Open the door to your dream career path today.</p>
     </div>
+
     <div class="jobs d-flex flex-column align-items-start justify-content-center">
+        <?php dynamic_sidebar('my_new_widget_area'); ?>
+        <!-- 
         <form class="filter">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Keywords(e.g. job, city, role...)" />
@@ -32,13 +34,13 @@ get_header();
                 </select>
                 <a href="" type="button" class="button">Search</a>
             </div>
-        </form>
+        </form> -->
 
         <?php 
          while(have_posts()){ 
         the_post(  );
         ?>
-        <div class="box">
+        <article class="box shadow-sm bg-body-tertiary">
             <div class="job-image">
                 <?php if( get_field('company_logo') ){ ?>
                 <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
@@ -50,22 +52,22 @@ get_header();
                     alt="..." />
                 <?php } ?>
             </div>
-            <div class="detail-box">
+            <div class="detail-box p-3">
                 <div class="job-desc">
                     <a href="<?php the_permalink( )?>">
                         <h4><?php the_title();?></h4>
                     </a>
                     <div class="location d-flex align-items-center justify-content-center">
-                        <p><i class="bx bxs-map-pin"></i> <?php the_field('location');?></p>
+                        <p><i class="bx bxs-map-pin"></i> <?php the_field('job_location');?></p>
                         <p><i class="bx bx-time"></i> <?php the_field('work_type');?></p>
                     </div>
                 </div>
             </div>
             <div class="date-box">
                 <a href="<?php the_permalink( )?>" class="button">Apply Now</a>
-                <p><em> Posted <?php echo time_ago(); ?></em></p>
+                <p><em>Closing Date <p><?php the_field('closing_date'); ?></p></em></p>
             </div>
-        </div>
+        </article>
         <?php
             } ?>
         <div class="paginate">

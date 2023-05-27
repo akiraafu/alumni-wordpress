@@ -5,18 +5,31 @@ get_header();
 </div>
 
 <section class="event-page container py-5">
-    <div class="heading-area mt-5">
-        <p class="tag">Our Events</p>
-        <p class="heading">Join us for a great time at our upcoming events.</p>
-
+    <div class="heading-area">
+        <p class="heading">Our Events</p>
+        <p class="tag">Join us for a great time at our upcoming event.</p>
     </div>
     <div class="events d-flex flex-column align-items-start justify-content-center">
-        <?php 
-         while(have_posts()){ 
-        the_post(  );
-        ?>
-        <div class="box">
-            <div class="event-image">
+        <?php
+                    $today = date('Ymd');
+                    $homepageEvents = new WP_Query(array(
+                        'post_type'=> 'event',
+                        'meta_key' => 'event_date',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'event_date',
+                                'compare' => '>=',
+                                'value' => $today,
+                                'type' => 'numeric'
+                            )
+                        )
+                    ));
+                    while( $homepageEvents -> have_posts(  )){
+                        $homepageEvents-> the_post(  );?>
+        <article class="box shadow-sm bg-body-tertiary">
+            <div class=" event-image p-2">
                 <?php 
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
@@ -26,13 +39,13 @@ get_header();
                 <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
                 <?php } ?>
             </div>
-            <div class="detail-box">
+            <div class="detail-box p-3">
                 <a href="<?php the_permalink( )?>">
                     <h4><?php the_title( ) ?></h4>
                 </a>
                 <h6><?php the_field('location');?></h6>
             </div>
-            <div class="date-box">
+            <div class="date-box p-2">
                 <h3>
                     <span> <?php $eventDate = new DateTime(get_field('event_date'));
                     echo $eventDate -> format('d');
@@ -41,7 +54,10 @@ get_header();
                     echo $eventDate -> format('M');?>
                 </h3>
             </div>
-        </div>
+        </article>
+
+
+
         <?php
             } ?>
         <div class="paginate">

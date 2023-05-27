@@ -50,9 +50,14 @@
                 </p>
             </div>
             <div class="col item social">
-                <a href="#"><i class="bx bxl-facebook"></i></a><a href="#"><i class="bx bxl-twitter"></i></a><a
-                    href="#"><i class="bx bxl-youtube"></i></a><a href="#"><i class="bx bxl-linkedin"></i></a>
-                <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+                <a href="https://www.facebook.com/northmetrotafe" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://twitter.com/northmetrotafe" target="_blank"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.youtube.com/c/NorthMetropolitanTAFE" target="_blank"><i
+                        class="bx bxl-youtube"></i></a>
+                <a href="https://www.linkedin.com/school/north-metropolitan-tafe/" target="_blank"><i
+                        class="bx bxl-linkedin"></i></a>
+                <a href="https://www.instagram.com/northmetrotafe/" target="_blank"><i
+                        class="bx bxl-instagram-alt"></i></a>
             </div>
         </div>
         <p class="copyright">North Metropolitan TAFE Alumni © 2023</p>

@@ -19,7 +19,7 @@ get_header();
                     <div class="detail-box">
                         <div>
                             <h1>&lt;Reconnect/&gt;</h1>
-                            <h2>Build Lifelong Connections with Graduates Worldwide</h2>
+                            <h2>Build Lifelong Connections with Graduates</h2>
                             <!-- <a href="" class="button"> Read More </a> -->
                         </div>
                     </div>
@@ -31,7 +31,7 @@ get_header();
                         <div>
                             <h1>&lt;Resources/&gt;</h1>
                             <h2>
-                                Discover the Power of Our Alumni Network and Resources
+                                Discover the Power of Our Alumni Network
                             </h2>
                             <!-- <a href="" class="button"> Read More </a> -->
                         </div>
@@ -43,7 +43,7 @@ get_header();
                     <div class="detail-box">
                         <div>
                             <h1>&lt;Reunions/&gt;</h1>
-                            <h2>Relive cherished memories and create new ones with old friends</h2>
+                            <h2>Relive Memories and Make New Ones</h2>
                             <!-- <a href="" class="button"> Read More </a> -->
                         </div>
                     </div>
@@ -54,7 +54,7 @@ get_header();
 </div>
 </div>
 <section class="upcoming-event py-5">
-    <div class="container px-5">
+    <div class="container">
         <p class="tag">Upcoming Event</p>
         <?php
                     $today = date('Ymd');
@@ -81,17 +81,18 @@ get_header();
                 $first_image = get_first_image_from_post_content(get_the_content());
                 if (!empty($first_image)) {
                  ?>
-                <img src="<?php echo $first_image ;?>" class="img-fluid" alt="..." />
+                <img src="<?php echo $first_image ;?>" class="img-fluid event-image-one" alt="..." />
                 <?php  }  else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="..." />
+                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid event-image-one"
+                    alt="..." />
                 <?php } ?>
             </div>
             <div class="event-content col-lg-5">
                 <a href="<?php the_permalink( )?>">
                     <h2><?php the_title( )?></h2>
 
-                    <i class='bx bxs-map-pin'></i>
-                    <span><?php the_field('location');?></span>
+                    <i class='bx bx-location-plus'></i>
+                    <span><?php the_field('event_location');?></span>
                 </a>
                 <p class="mt-3">
                     <?php
@@ -126,12 +127,9 @@ get_header();
                     ?>
     </div>
 </section>
+
 <section class="aboutus container py-5">
     <div class="row py-5 mb-3">
-        <div class="col-md-5 about-img">
-            <img src="<?php echo get_theme_file_uri( "/images/hero-bg3.jpg" )?>" alt=""
-                class="img-fluid aboutus-img-one" />
-        </div>
         <div class="col-md d-flex flex-column align-items-start justify-content-center">
             <p class="tag mb-3">About Us</p>
             <h2 class="mb-3">
@@ -145,15 +143,19 @@ get_header();
                 are doing in industry, and have a forum to share their experiences.
             </p>
         </div>
+        <div class="col-md-5 about-img">
+            <img src="<?php echo get_theme_file_uri( "/images/hero-bg3.jpg" )?>" alt=""
+                class="img-fluid aboutus-img-one" />
+        </div>
     </div>
 </section>
+
 <section class="activities">
     <div class="container py-5">
-        <!-- <p class="tag">Our Activities</p> -->
         <div class="row d-flex flex-wrap align-items-center justify-content-center">
             <div class="col-md d-flex flex-column align-items-center">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
-                    <h3>Latest Blog</h3>
+                    <h3>Latest Blogs</h3>
                 </div>
                 <div class="cards scrollbar" id="scrollbar">
 
@@ -168,13 +170,15 @@ get_header();
                     <div class="card mb-3" style="max-width: 540px">
                         <div class="row g-0">
                             <div class="col-4">
-                                <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
+                                <a href="<?php the_permalink(  ) ?>">
+                                    <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
                 if($feat_image) {?>
-                                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
-                                <?php } else {?>
-                                <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                                    class="img-fluid" alt="..." />
-                                <?php } ?>
+                                    <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="..." />
+                                    <?php } else {?>
+                                    <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
+                                        class="img-fluid" alt="..." />
+                                    <?php } ?>
+                                </a>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
@@ -204,7 +208,7 @@ get_header();
             </div>
             <div class="col-md d-flex flex-column align-items-center mx-3">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
-                    <h3>Job Opportunity</h3>
+                    <h3>Job Opportunities</h3>
                 </div>
                 <div class="cards jobs scrollbar" id="scrollbar">
                     <?php
@@ -219,13 +223,15 @@ get_header();
                     <div class="card mb-3" style="max-width: 540px">
                         <div class="row g-0">
                             <div class="col-4">
-                                <?php if( get_field('company_logo') ){ ?>
-                                <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
+                                <a href="<?php the_permalink( )?>">
+                                    <?php if( get_field('company_logo') ){ ?>
+                                    <img src="<?php the_field('company_logo'); ?>" class="img-fluid" alt="" />
 
-                                <?php } else {?>
-                                <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
-                                    class="img-fluid" alt="..." />
-                                <?php } ?>
+                                    <?php } else {?>
+                                    <img src="<?php echo get_theme_file_uri('/images/No_Image_Available.jpg')?>"
+                                        class="img-fluid" alt="..." />
+                                    <?php } ?>
+                                </a>
                             </div>
                             <div class="col-8">
                                 <div class="card-body">
@@ -292,9 +298,9 @@ get_header();
                                 <div class="card-body">
                                     <a href="<?php the_permalink( )?>">
                                         <h5 class="card-title"><?php the_title( )?></h5>
-                                    </a>
-                                    <p class="card-text">
-                                        <?php
+
+                                        <p class="card-text">
+                                            <?php
                     if(has_excerpt(  )){
                        
                         echo wp_trim_words(get_the_excerpt(  ),10);
@@ -302,7 +308,8 @@ get_header();
                         echo wp_trim_words( get_the_content( ),10);
                     }
                      ?>
-                                    </p>
+                                        </p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
