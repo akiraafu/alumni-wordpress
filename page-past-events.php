@@ -6,8 +6,8 @@ get_header();
 
 <section class="event-page container py-5">
     <div class="heading-area mt-5">
-        <p class="tag">Past Events</p>
-        <p class="heading">A recap of our past events.</p>
+        <h1 class="heading">Past Events</h1>
+        <p class="tag">A recap of our past events.</p>
 
     </div>
     <div class="events d-flex flex-column align-items-start justify-content-center">
@@ -31,31 +31,40 @@ get_header();
     while( $pastEvents->have_posts()){ 
         $pastEvents -> the_post(  );
         ?>
-        <div class="box">
-            <div class="event-image">
-                <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID()) ); 
-                if($feat_image) {?>
-                <img src="<?php echo $feat_image; ?>" class="img-fluid" alt="...">
-                <?php } else {?>
-                <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
-                <?php } ?>
-            </div>
-            <div class="detail-box">
+        <article class="box shadow-sm bg-body-tertiary">
+            <div class=" event-image p-2">
                 <a href="<?php the_permalink( )?>">
-                    <h4><?php the_title( ) ?></h4>
+                    <?php 
+                $first_image = get_first_image_from_post_content(get_the_content());
+                if (!empty($first_image)) {
+                 ?>
+                    <img src="<?php echo $first_image ;?>" class="img-fluid" alt="...">
+                    <?php  }  else {?>
+                    <img src="<?php echo get_theme_file_uri('/images/event.jpg')?>" class="img-fluid" alt="...">
+                    <?php } ?>
+                </a>
+            </div>
+            <div class="detail-box p-3">
+                <a href="<?php the_permalink( )?>">
+                    <h2 class="fs-4 event-title"><?php the_title( ) ?></h2>
                 </a>
                 <h6><?php the_field('location');?></h6>
             </div>
-            <div class="date-box">
-                <h3>
-                    <span> <?php $eventDate = new DateTime(get_field('event_date'));
+            <div class="date-box p-2">
+                <a href="<?php the_permalink( )?>">
+                    <h3>
+                        <span> <?php $eventDate = new DateTime(get_field('event_date'));
                     echo $eventDate -> format('d');
                     ?> </span>
-                    <?php $eventDate = new DateTime(get_field('event_date'));
+                        <?php $eventDate = new DateTime(get_field('event_date'));
                     echo $eventDate -> format('M');?>
-                </h3>
+                    </h3>
+                </a>
+
             </div>
-        </div>
+        </article>
+
+
         <?php
     } ?>
         <p class="mt-5">Don't wanna miss out? <a class="border-bottom" href="

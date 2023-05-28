@@ -19,7 +19,6 @@ add_action( "wp_enqueue_scripts", 'alumni_files' );
 
 
 // add custom class on every page body tag except the homepage
-
 function custom_class( $classes ) {
     if (!is_front_page()) {
         $classes[] = 'sub-page';
@@ -113,6 +112,8 @@ function time_ago( $type = 'post' ) {
 }
 
 
+
+//get first image from a post
 function get_first_image_from_post_content($post_content) {
     preg_match('/<img.+?src="(.+?)"/', $post_content, $matches);
     if (isset($matches[1])) {
@@ -123,7 +124,7 @@ function get_first_image_from_post_content($post_content) {
 
 
 
- //*********Building a widget**********
+ //*********Building a widget for filter**********
 
  function alumni_widget_init() {
 	

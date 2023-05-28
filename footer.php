@@ -60,7 +60,8 @@
                         class="bx bxl-instagram-alt"></i></a>
             </div>
         </div>
-        <p class="copyright">North Metropolitan TAFE Alumni © 2023</p>
+        <p class="copyright">North Metropolitan TAFE Alumni © 2023 || Design & Developed by&#160;<a
+                href="https://github.com/akiraafu" target="_blank">Akira Fu</a></p>
     </div>
 </footer>
 
