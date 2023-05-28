@@ -6,7 +6,7 @@ get_header();
 
 <section class="jobs-page container py-5">
     <div class="heading-area">
-        <h1 class="heading">Career Opportunities</h1>
+        <h1 class="heading">Job Opportunities</h1>
         <p class="tag">Open the door to your dream career path today.</p>
     </div>
 
