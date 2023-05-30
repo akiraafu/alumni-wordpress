@@ -8,11 +8,11 @@ the_post(  );?>
 
 
 <section class="aboutus container py-5">
+    <div class="heading-area">
+        <p class="heading mb-3">About Us</p>
+    </div>
     <div class="row container py-5 mb-3 d-flex align-items-center justify-content-center">
         <div class="col d-flex flex-column align-items-start justify-content-center">
-            <div class="heading-area">
-                <p class="heading mb-3">About Us</p>
-            </div>
 
             <h1 class="mb-4 fs-2">
                 Stay Connected to Your School and Your Fellow Alumni!

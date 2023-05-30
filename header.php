@@ -8,7 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+    <button onclick="backToTop()" id="backToTop" title="Go to top"><i class='bx bxs-to-top'></i></button>
     <div class="hero-area" style=" background-image: linear-gradient(
       rgba(29, 38, 113, 0.8),
       rgba(195, 55, 100, 0.8)

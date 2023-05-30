@@ -11939,6 +11939,26 @@ a:focus {
   color: #e45f2b !important;
 }
 
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  background-color: #e45f2b;
+  opacity: 0.8;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+}
+#backToTop:hover {
+  background-color: #777;
+}
+
 .tag {
   color: #555;
 }
@@ -12516,12 +12536,6 @@ footer .copyright {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-}
-.detail-page .content-area .content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
 .detail-page .content-area .content-text p {
   line-height: 150%;

@@ -48,7 +48,7 @@ get_header();
                 <a href="<?php the_permalink( )?>">
                     <h2 class="fs-4 event-title"><?php the_title( ) ?></h2>
                 </a>
-                <h6><?php the_field('location');?></h6>
+                <h6><?php the_field('event_location');?></h6>
             </div>
             <div class="date-box p-2">
                 <a href="<?php the_permalink( )?>">
