@@ -6,8 +6,8 @@ get_header();
 
 <section class="blog-page container py-5">
     <div class="heading-area">
-        <p class="heading">Our Blogs</p>
-        <p class="tag">Stay up-to-date by following our blog.</p>
+        <p class="heading">Our News</p>
+        <p class="tag">Stay up-to-date by following our news.</p>
     </div>
 
     <div class="blogs d-flex flex-column align-items-start justify-content-center">

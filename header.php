@@ -34,7 +34,7 @@
                             </li>
 
                             <li class="nav-item  <?php if(get_post_type() == 'post' ) echo 'active'?>">
-                                <a class="nav-link" href="<?php echo site_url('/blog')?>">Blog</a>
+                                <a class="nav-link" href="<?php echo site_url('/news')?>">News</a>
                             </li>
                             <li
                                 class="nav-item <?php if(get_post_type() == 'event' OR is_page('past-events') ) echo 'active'?>">

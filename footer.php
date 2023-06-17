@@ -6,7 +6,7 @@
     <div class="d-flex flex-column align-items-center justify-content-center">
         <h2 class="mb-4">Don’t Miss Awesome Updates From Our Alumni</h2>
         <p class="mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Stay in the loop and never miss out on exciting updates from our accomplished alumni.
         </p>
         <form class="d-flex flex-column align-items-center justify-content-center">
             <input type="email" placeholder="Your Email Address" required />

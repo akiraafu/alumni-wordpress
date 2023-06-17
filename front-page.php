@@ -157,7 +157,7 @@ get_header();
         <div class="row d-flex flex-wrap align-items-center justify-content-center">
             <div class="col-md d-flex flex-column align-items-center">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
-                    <h3>Latest Blogs</h3>
+                    <h3>Latest News</h3>
                 </div>
                 <div class="cards scrollbar" id="scrollbar">
 
@@ -217,7 +217,7 @@ get_header();
                 ?>
 
                 </div>
-                <a href="<?php echo site_url('/blog')?>" class="button">View All Blogs</a>
+                <a href="<?php echo site_url('/news')?>" class="button">View All News</a>
             </div>
             <div class="col-md d-flex flex-column align-items-center mx-3">
                 <div class="desc w-100 d-flex flex-column align-items-center my-4">
